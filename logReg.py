@@ -8,8 +8,8 @@ from matplotlib import pyplot as plt
 #hVec = [1, 2, 4, 3.5, 10, 6, 5, 11, 3, 2]
 #wVec = [0, 0, 1, 0, 1, 1, 1, 1, 0, 0]
 
-hVec = [1, 10, 50, 50, 40, 30, 90, 100, 100]
-wVec = [0, 0, 0, 1, 0, 1, 1, 1, 0]
+hVec = [1, 10, 50, 50, 40, 30, 90, 70, 80, 100]
+wVec = [0, 0, 0, 1, 0, 1, 1, 1, 1, 0]
 
 numDataPoints = len(wVec)
 
