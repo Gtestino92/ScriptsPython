@@ -34,7 +34,7 @@ min = minimize(func,betaVecInit)
 
 betaOpt0 = min.x[0]
 betaOpt1 = min.x[1]
-print(min.x)
+print(min)
 xvals = np.arange(-50, 150, 0.1)
 yvals = np.zeros(len(xvals))
 for i in range(len(xvals)):
