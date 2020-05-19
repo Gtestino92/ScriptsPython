@@ -1,6 +1,7 @@
 import numpy as np
 import math
 from matplotlib import pyplot as plt
+from matplotlib import cm
 
 MAX_ITER = 100
 MIN_DIST = 0.1
@@ -98,15 +99,12 @@ for i in range(len(x1vals)):
         hValsGraf = np.array([x1vals[i],x2vals[j]])
         zvals[i] = alfaVal(wVecOpt,getxVec(hValsGraf))    
     
-#print(yvals)
-
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 x = y = np.arange(-100, 200, GRAF_STEP)
 X, Y = np.meshgrid(x, y)
 zs = np.array([alfaVal(wVecOpt,getxVec(np.array([x,y]))) for x,y in zip(np.ravel(X), np.ravel(Y))])
 Z = zs.reshape(X.shape)
-
-ax.plot_surface(X, Y, Z)
-
+surf = ax.plot_surface(X, Y, Z, cmap='jet')
+fig.colorbar(surf, ax=ax, shrink=0.5, aspect=5)
 plt.show()
