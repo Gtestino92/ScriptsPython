@@ -2,6 +2,7 @@ import numpy as np
 import math
 from matplotlib import pyplot as plt
 from matplotlib import cm
+import time
 
 MAX_ITER = 100
 MIN_DIST = 0.1
@@ -72,15 +73,9 @@ def getProbCompraEstimation(hVals,yVec,xVals):
     wVecOpt = getOptwVec(A,yVec,hVals,wVecInit,n)
     return alfaVal(wVecOpt,getxVec(xVals))
 
+hVals1A = np.transpose(np.matrix([[1, 60, 20, 30, 80, 50, 50, 40, 30, 20, 10, 30, 100, 120, 140, 100, 20, 10]]))
 
-hVals = np.transpose(np.matrix([[1, 100, 20, 30, 40, 50, 50, 40, 30, 90, 40, 30, 100],
-                [10, 40, 30, 50, 30, 40, 60, 70, 60, 90, 30, 20, 100]]))
+yVecA = np.matrix(np.array([0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1])).reshape(-1,1)
 
-yVec = np.matrix(np.array([0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1])).reshape(-1,1)
-
-
-xVals = np.array([-100,-100])
-
-p = getProbCompraEstimation(hVals,yVec,xVals)
-
-print(p)
+xVals1 = np.array([0])
+#p = getProbCompraEstimation(hVals1A,yVecA,xVals1)
